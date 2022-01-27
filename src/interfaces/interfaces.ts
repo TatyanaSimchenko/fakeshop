@@ -6,7 +6,7 @@ export type CurrencyType = 'USD' | 'EUR'
 
 export interface Action {
     type: ActionType,
-    payload: MainReduserState
+    payload: Partial<MainReducerState>
 }
 
 export interface CartItem {
@@ -22,7 +22,7 @@ export interface Product {
     readonly imageUrl: string
 }
 
-export interface MainReduserState {
+export interface MainReducerState {
     readonly products: Product[]
     loading: boolean
     searchString?: string

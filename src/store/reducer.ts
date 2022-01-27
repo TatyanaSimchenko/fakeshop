@@ -1,8 +1,8 @@
-import { MainReduserState, Action } from "../interfaces/interfaces";
+import { MainReducerState, Action } from "../interfaces/interfaces";
 
 const cart = localStorage.getItem('cart')
 
-export const initialState: MainReduserState = {
+export const initialState: MainReducerState = {
     loading: false,
     products: [],
     cart: cart ? JSON.parse(cart) : [] ,
@@ -11,7 +11,7 @@ export const initialState: MainReduserState = {
     currency: 'USD'
 
 }
-const reducer = (state: MainReduserState = initialState, action: Action): MainReduserState => {
+const reducer = (state: MainReducerState = initialState, action: Action): MainReducerState => {
     const { type, payload } = action
     switch(type) {
         case 'SET_MAIN_STATE':
