@@ -13,3 +13,16 @@ const mapDispatchToProps = (dispatch: Dispatch & ThunkDispatch<any, any, any>) =
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProductList)
+
+
+
+// const mapStateToProps = (state: ReducerState): ReducerState => {
+//   const { sortBy, products } = state
+//   return {
+//     ...state,
+//     products: products.sort((a, b) => sortBy === 'LOW' ? +a.price - +b.price : +b.price - +a.price)
+//   }
+// }
+// const mapDispatchToProps = (dispatch: Dispatch) => ({
+//   actions: bindActionCreators(mainActions, dispatch)
+// })

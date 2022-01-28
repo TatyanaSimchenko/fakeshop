@@ -2,17 +2,22 @@ import React, { useEffect, useState, useMemo } from "react";
 import { Col, Container, Pagination, Row } from "react-bootstrap";
 import { MainReducerState } from "../../interfaces/interfaces";
 import ProductItem from "../ProductItem";
+// import debonce from 'lodash/debounce'
 
 const PAGE_LIMIT: number = 4
 
 type Props = Partial<MainReducerState> & { fetchProductList: Function }
-
+ 
 const ProductList = (props: Props) => {
     const { fetchProductList, products = [], searchString } = props
     const [activePage, setActivePage] = useState<number>(0)
     useEffect(() => {
         fetchProductList()
     }, [fetchProductList, searchString])
+
+    
+
+    
 
     const { items, pagStart, pagEnd } = useMemo(() => {
         const pageLimit = Math.ceil(products.length / PAGE_LIMIT)
@@ -39,6 +44,13 @@ const ProductList = (props: Props) => {
 
     return (
         <Container className="px-2">
+            {/* <Form>
+                    <Form.Control
+                        onChange={debonce(onSearch, 1000)} 
+                        type="text"
+                        placeholder="Search"
+                        className="mr-sm-2 mb-4" />
+                </Form> */}
             <Row>
                 {products.length ? products.slice(pagStart, pagEnd).map(item => {
                     return (

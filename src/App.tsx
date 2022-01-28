@@ -1,24 +1,20 @@
 import React from 'react';
+import AppNavBar from './components/AppNavBar/AppNavBar';
 import ProductList from './components/ProductList';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Container } from 'react-bootstrap';
 
 
 import './App.css';
-import AppNavBar from './components/AppNavBar/AppNavBar';
-
-
-
-
-
 
 
 function App() {
   return (
-    <div >
-      <AppNavBar />
-      {/* <AppNavBar /> */}
-      <ProductList />
-    </div>
+    <Container>
+          <AppNavBar /> 
+          <ProductList />
+    </Container>
+
   );
 }
 

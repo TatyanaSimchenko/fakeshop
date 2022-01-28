@@ -6,7 +6,7 @@ export type CurrencyType = 'USD' | 'EUR'
 
 export interface Action {
     type: ActionType,
-    payload: Partial<MainReducerState>
+    payload: any
 }
 
 export interface CartItem {
@@ -29,5 +29,6 @@ export interface MainReducerState {
     sortBy: SortType
     currency: CurrencyType
     cart: CartItem[]
+    fetchOffset: number
 
 }

@@ -1,32 +1,39 @@
 import React from 'react';
 // import debonce from 'lodash/debounce'
-// import { MainReducerState } from "../../interfaces/interfaces";
+
+import { MainReducerState } from "../../interfaces/interfaces";
 import { Navbar, Form } from "react-bootstrap";
+// import { Action } from 'redux';
 
 
+type Props = Partial<MainReducerState>
 
+// type Props = Partial<MainReducerState> & 
+// { setMainState: (payload: any): Action => void }
 
-// type Props = Partial<MainReducerState> & { setMainState: (payload: Partial<MainReducerState>) => void }
+// type Props = Partial<MainReducerState> & 
+// { setMainState: (payload: Partial<MainReducerState>) => void }
 
-const AppNavBar = () => {
+const AppNavBar = (props: Props,setMainState: (payload: any) => void ) => {
+// const {setMainState} = props
 
-    // const { setMainState } = props
+//     const onSearch = (e: any) => {
+//         const { target: { value } } = e
+//         setMainState({ searchString: value })
+//     }
 
-    // const onSearch = (e: any) => {
-    //     const { target: { value} } = e
-    //     setMainState({ searchString: value })
+//     const onSearch = ({ target }: any): void => {
+//         setMainState({
+//             fetchOffset: 0,
+//             searchString: target.value
+//         })
+//     }
 
-    // const onSearch = ({ target }: any): void => {
-    //     setMainState({
-    //         searchString: target.value
-    //     }) 
-    // }
-
-    // const onSelectChange = (key: string) => ({ target }: any): void => {
-    //     setMainState({
-    //         [key]: target.value
-    //     }) 
-    // }
+//     const onSelectChange = (key: string) => ({ target }: any): void => {
+//         setMainState({
+//             [key]: target.value
+//         })
+//     }
 
 
     return (
@@ -35,7 +42,7 @@ const AppNavBar = () => {
             <div className="d-flex flex-column">
                 <Form>
                     <Form.Control
-                        // onChange={debonce(onSearch, 1000)} 
+                        // onChange={debonce(onSearch, 1000)}
                         type="text"
                         placeholder="Search"
                         className="mr-sm-2 mb-4" />
@@ -45,7 +52,7 @@ const AppNavBar = () => {
                     <Form.Control
                         as="select"
                         className="ml-4"
-                    // onChange={onSelectChange('sortBy')}
+                        // onChange={onSelectChange('sortBy')}
                     >
                         <option value="LOW">Price: Low to Hight</option>
                         <option value="HIGHT">Price: Hight to Low</option>

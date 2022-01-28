@@ -10,4 +10,6 @@ const mapDispatchToProps = (dispatch: Dispatch) => ({
     setMainState: (payload: Partial<MainReducerState>) => dispatch(setMainState(payload))
 })
 
+
+
 export default connect(mapStateToProps, mapDispatchToProps)(AppNavBar)
